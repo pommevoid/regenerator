@@ -1,6 +1,11 @@
 
-from .core import Generator
+from .core import Regenerator
 
 __all__ = [
-    "Generator",
+    "Regenerator",
 ]
+
+from ._version import get_versions
+__version__ = get_versions()['version']
+del get_versions
+

@@ -1,0 +1,7 @@
+black
+furo
+pytest
+pytest-cov
+sphinx
+twine
+versioneer

@@ -1,7 +1,7 @@
 
 from itertools import chain
 
-class Generator:
+class Regenerator:
     def __init__(self, generator):
         self.generator = generator
 
@@ -27,7 +27,3 @@ def empty_generator():
     yield
 
 
-if __name__ == "__main__":
-    generator = Generator((x for x in range(5)))
-    for item in generator.copy():
-        print(item)
