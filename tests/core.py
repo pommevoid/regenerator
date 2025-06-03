@@ -2,9 +2,12 @@
 from regenerator import Regenerator
 
 def test():
-    xlist = list(range(5))
-    regenerator = Regenerator((x for x in xlist))
+    a = list(range(5))
+    regenerator = Regenerator((item for item in a))
     for item in regenerator:
         print(item)  
-    assert all(xlist, list(regenerator))
+    b = list(regenerator)
+    assert len(a) == len(b)
+    for item1, item2 in zip(a, b):
+        assert item1 == item2
     

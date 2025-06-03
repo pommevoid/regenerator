@@ -1,22 +1,5 @@
-
 import threading
 import queue
-
-class Regenerator:
-    def __init__(self, generator):
-        self.generator = generator
-
-    def __iter__(self):
-        return self.copy()
-
-    def __list__(self):
-        return list(self.copy())
-
-    def copy(self):
-        g1, g2 = duplicate(self.generator)
-        self.generator = g1
-        return g2
- 
 
 def duplicate(generator):
     q1 = queue.Queue()
@@ -44,7 +27,13 @@ def duplicate(generator):
     threading.Thread(target=producer, daemon=True).start()
     return queue_to_generator(q1), queue_to_generator(q2)
 
-if __name__ == "__main__":
-    g0 = (i for i in range(5))
-    g1, g2 = duplicate(g0)
-    assert list(g1) == list(g2)
+g1, g2 = duplicate(range(5))
+
+print("from g1:")
+for x in g1:
+    print(x)
+
+print("from g2:")
+for x in g2:
+    print(x)
+
