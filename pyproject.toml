@@ -10,7 +10,7 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.8"
-license = { text = "MIT" }
+license = "MIT"
 dynamic = ["version"]
 
 [project.urls]
@@ -21,7 +21,7 @@ include = ["regenerator", "regenerator.*"]
 
 [tool.versioneer]
 VCS = "git"
-style = "pep440"
+style = "pep440-pre"
 versionfile_source = "regenerator/_version.py"
 versionfile_build = "regenerator/_version.py"
 tag_prefix = ""
